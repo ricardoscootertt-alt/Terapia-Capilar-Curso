@@ -1,269 +1,148 @@
-# Terapia-Capilar-Curso
-Curso para Terapeuta Capilar 
 <!DOCTYPE html>
-<html lang="pt-pt">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Terapia Capilar PRO Academy</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <title>Plataforma de Terapia Capilar</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap');
-        body { font-family: 'Inter', sans-serif; }
-        .video-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; }
-        .video-container iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border-radius: 12px; }
-        .tab-content { display: none; }
-        .tab-content.active { display: block; }
+        body { background-color: #f8f9fa; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+        .hero { background: linear-gradient(135deg, #2c3e50, #00d2ff); color: white; padding: 60px 0; text-align: center; }
+        .module-card { border: none; border-radius: 15px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); margin-bottom: 30px; transition: 0.3s; }
+        .module-card:hover { transform: translateY(-5px); }
+        .video-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 10px; margin-bottom: 10px; }
+        .video-container iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
+        .pdf-section { background-color: #e9ecef; padding: 15px; border-radius: 8px; border-left: 5px solid #00d2ff; }
+        .nav-pills .nav-link.active { background-color: #2c3e50; }
+        h2 { color: #2c3e50; font-weight: bold; margin-bottom: 25px; border-bottom: 2px solid #00d2ff; display: inline-block; }
     </style>
 </head>
-<body class="bg-slate-50 text-slate-800">
+<body>
 
-    <!-- Navegação -->
-    <nav class="bg-white border-b border-slate-200 sticky top-0 z-50">
-        <div class="max-w-7xl mx-auto px-4 h-18 flex items-center justify-between py-4">
-            <div class="flex items-center gap-2 cursor-pointer" onclick="showTab('home')">
-                <i class="fas fa-graduation-cap text-emerald-600 text-2xl"></i>
-                <span class="font-bold text-xl tracking-tight text-slate-900">Terapia Capilar <span class="text-emerald-600">PRO</span></span>
-            </div>
-            <div class="hidden md:flex gap-8 font-semibold text-sm text-slate-600">
-                <button onclick="showTab('home')" class="hover:text-emerald-600 transition-colors">Módulos</button>
-                <button onclick="showTab('simulator')" class="hover:text-emerald-600 transition-colors">Simulador</button>
-                <button onclick="showTab('resources')" class="hover:text-emerald-600 transition-colors">Biblioteca</button>
-            </div>
-            <button class="bg-emerald-600 text-white px-5 py-2 rounded-full text-sm font-bold hover:bg-emerald-700 transition-all shadow-md">Acesso Aluno</button>
-        </div>
-    </nav>
+<div class="hero">
+    <div class="container">
+        <h1>Academia de Terapia Capilar</h1>
+        <p class="lead">Formação Profissional Completa</p>
+    </div>
+</div>
 
-    <!-- Header Hero -->
-    <header class="bg-white border-b border-slate-200 py-12 mb-8">
-        <div class="max-w-7xl mx-auto px-4">
-            <h1 class="text-4xl md:text-5xl font-extrabold text-slate-900 mb-4 text-center md:text-left">Curso Completo de Terapia Capilar</h1>
-            <p class="text-lg text-slate-600 max-w-3xl text-center md:text-left leading-relaxed">Domine as técnicas de tricologia, patologias do couro cabeludo e eletroterapia com especialistas reais.</p>
-        </div>
-    </header>
+<div class="container mt-5">
+    <ul class="nav nav-pills mb-5 justify-content-center" id="pills-tab" role="tablist">
+        <li class="nav-item"><button class="nav-link active" data-bs-toggle="pill" data-bs-target="#tricologia">Tricologia Básica</button></li>
+        <li class="nav-item"><button class="nav-link" data-bs-toggle="pill" data-bs-target="#eletroterapia">Eletroterapia</button></li>
+        <li class="nav-item"><button class="nav-link" data-bs-toggle="pill" data-bs-target="#anamnese">Anamnese</button></li>
+        <li class="nav-item"><button class="nav-link" data-bs-toggle="pill" data-bs-target="#argiloterapia">Argiloterapia</button></li>
+    </ul>
 
-    <main class="max-w-7xl mx-auto px-4 pb-20">
-
-        <!-- ABA: HOME / MÓDULOS -->
-        <section id="home" class="tab-content active">
-            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12" id="modules-grid">
-                <!-- Módulo 1 -->
-                <div onclick="openLesson('bio')" class="bg-white p-6 rounded-2xl border border-slate-200 hover:border-emerald-500 hover:shadow-xl transition-all cursor-pointer group">
-                    <div class="w-12 h-12 bg-emerald-100 text-emerald-600 rounded-xl flex items-center justify-center mb-4 group-hover:bg-emerald-600 group-hover:text-white transition-all">
-                        <i class="fas fa-dna text-xl"></i>
+    <div class="tab-content">
+        
+        <div class="tab-pane fade show active" id="tricologia">
+            <h2>Módulo 1: Tricologia Capilar Básica</h2>
+            <div class="row">
+                <div class="col-md-6 mb-4">
+                    <div class="card module-card p-3">
+                        <h5>Abertura e Aula 1</h5>
+                        <div class="video-container"><iframe src="https://www.youtube.com/embed/w7YKKS896XM" frameborder="0" allowfullscreen></iframe></div>
+                        <div class="video-container"><iframe src="https://www.youtube.com/embed/AsSWz3NfJFE" frameborder="0" allowfullscreen></iframe></div>
                     </div>
-                    <h3 class="font-bold text-lg mb-2">Tricologia Básica</h3>
-                    <p class="text-sm text-slate-500">Biologia do fio e ciclos de crescimento capilar.</p>
                 </div>
-
-                <!-- Módulo 2 -->
-                <div onclick="openLesson('micro')" class="bg-white p-6 rounded-2xl border border-slate-200 hover:border-emerald-500 hover:shadow-xl transition-all cursor-pointer group">
-                    <div class="w-12 h-12 bg-emerald-100 text-emerald-600 rounded-xl flex items-center justify-center mb-4 group-hover:bg-emerald-600 group-hover:text-white transition-all">
-                        <i class="fas fa-microscope text-xl"></i>
-                    </div>
-                    <h3 class="font-bold text-lg mb-2">Tricoscopia</h3>
-                    <p class="text-sm text-slate-500">Como realizar exames com micro-câmara e diagnosticar.</p>
-                </div>
-
-                <!-- Módulo 3 -->
-                <div onclick="openLesson('eletro')" class="bg-white p-6 rounded-2xl border border-slate-200 hover:border-emerald-500 hover:shadow-xl transition-all cursor-pointer group">
-                    <div class="w-12 h-12 bg-emerald-100 text-emerald-600 rounded-xl flex items-center justify-center mb-4 group-hover:bg-emerald-600 group-hover:text-white transition-all">
-                        <i class="fas fa-bolt text-xl"></i>
-                    </div>
-                    <h3 class="font-bold text-lg mb-2">Eletroterapia</h3>
-                    <p class="text-sm text-slate-500">Laser de baixa potência e Alta Frequência na prática.</p>
-                </div>
-
-                <!-- Módulo 4 -->
-                <div onclick="openLesson('argila')" class="bg-white p-6 rounded-2xl border border-slate-200 hover:border-emerald-500 hover:shadow-xl transition-all cursor-pointer group">
-                    <div class="w-12 h-12 bg-emerald-100 text-emerald-600 rounded-xl flex items-center justify-center mb-4 group-hover:bg-emerald-600 group-hover:text-white transition-all">
-                        <i class="fas fa-leaf text-xl"></i>
-                    </div>
-                    <h3 class="font-bold text-lg mb-2">Argiloterapia</h3>
-                    <p class="text-sm text-slate-500">Detox capilar e óleos essenciais para terapia.</p>
-                </div>
-            </div>
-
-            <!-- Área de Vídeo Aula (Escondida por padrão) -->
-            <div id="lesson-viewer" class="hidden animate-in fade-in duration-500">
-                <button onclick="closeLesson()" class="mb-6 text-slate-500 hover:text-emerald-600 font-semibold flex items-center gap-2">
-                    <i class="fas fa-arrow-left"></i> Voltar aos Módulos
-                </button>
-                <div class="grid lg:grid-cols-3 gap-8">
-                    <div class="lg:col-span-2 space-y-6">
-                        <div class="video-container shadow-2xl bg-black rounded-xl">
-                            <iframe id="main-video" src="" frameborder="0" allowfullscreen></iframe>
-                        </div>
-                        <div class="bg-white p-8 rounded-2xl border border-slate-200">
-                            <h2 id="lesson-title" class="text-2xl font-bold mb-4 text-slate-900">Título da Aula</h2>
-                            <p class="text-slate-600 leading-relaxed">Nesta aula prática, aprenda os fundamentos e a aplicação técnica para resultados profissionais imediatos.</p>
-                        </div>
-                    </div>
-                    <div class="space-y-6">
-                        <div class="bg-emerald-600 text-white p-6 rounded-2xl">
-                            <h4 class="font-bold mb-3 flex items-center gap-2"><i class="fas fa-info-circle"></i> Nota da Especialista</h4>
-                            <p class="text-sm text-emerald-50/90 leading-relaxed">Lembre-se que a biossegurança é fundamental. Use sempre luvas e esterilize os seus equipamentos após cada atendimento.</p>
-                        </div>
-                        <div class="bg-white p-6 rounded-2xl border border-slate-200">
-                            <h4 class="font-bold mb-4">Material de Apoio</h4>
-                            <button class="w-full flex items-center justify-between p-3 bg-slate-50 rounded-lg text-sm hover:bg-slate-100 transition-all mb-2 font-medium">
-                                <span><i class="far fa-file-pdf mr-2 text-red-500"></i> Guia de Protocolos</span>
-                                <i class="fas fa-download text-slate-400"></i>
-                            </button>
-                            <button class="w-full flex items-center justify-between p-3 bg-slate-50 rounded-lg text-sm hover:bg-slate-100 transition-all font-medium">
-                                <span><i class="far fa-file-pdf mr-2 text-red-500"></i> Dicionário de Ativos</span>
-                                <i class="fas fa-download text-slate-400"></i>
-                            </button>
-                        </div>
+                <div class="col-md-6 mb-4">
+                    <div class="card module-card p-3">
+                        <h5>Aulas 2, 3 e 4</h5>
+                        <div class="video-container"><iframe src="https://www.youtube.com/embed/3fEafdvQmzo" frameborder="0" allowfullscreen></iframe></div>
+                        <div class="video-container"><iframe src="https://www.youtube.com/embed/qYXnvoPCq2Y" frameborder="0" allowfullscreen></iframe></div>
+                        <div class="video-container"><iframe src="https://www.youtube.com/embed/r3SRkzYpu90" frameborder="0" allowfullscreen></iframe></div>
                     </div>
                 </div>
             </div>
-        </section>
-
-        <!-- ABA: SIMULADOR -->
-        <section id="simulator" class="tab-content max-w-3xl mx-auto">
-            <div class="text-center mb-10">
-                <h2 class="text-3xl font-bold mb-3">Simulador de Diagnóstico</h2>
-                <p class="text-slate-500">Aplique o seu conhecimento clínico para resolver casos reais.</p>
-            </div>
-            <div class="bg-white p-8 rounded-3xl border border-slate-200 shadow-sm relative overflow-hidden">
-                <div class="absolute top-0 left-0 w-2 h-full bg-emerald-500"></div>
-                <span class="inline-block bg-slate-100 text-slate-600 text-xs font-bold px-3 py-1 rounded-full mb-4 uppercase tracking-wider">Caso Clínico #01</span>
-                <h3 class="text-xl font-bold mb-6 text-slate-900 leading-snug">"Paciente masculino, 35 anos, apresenta rarefação na zona da coroa e entradas frontais. Relata que o pai e o avô têm o mesmo padrão."</h3>
-                
-                <div class="space-y-4">
-                    <button onclick="checkAnswer(true, 'Correto! Trata-se de Alopecia Androgenética (calvície), caracterizada pela miniaturização folicular mediada pela DHT.')" class="w-full text-left p-4 rounded-xl border border-slate-200 hover:border-emerald-500 hover:bg-emerald-50 transition-all font-medium flex justify-between items-center group">
-                        <span>A) Alopecia Androgenética</span>
-                        <i class="fas fa-chevron-right text-slate-300 group-hover:text-emerald-500"></i>
-                    </button>
-                    <button onclick="checkAnswer(false, 'Incorreto. A Alopecia Areata costuma apresentar-se em clareiras circulares súbitas.')" class="w-full text-left p-4 rounded-xl border border-slate-200 hover:border-emerald-500 hover:bg-emerald-50 transition-all font-medium flex justify-between items-center group">
-                        <span>B) Alopecia Areata</span>
-                        <i class="fas fa-chevron-right text-slate-300 group-hover:text-emerald-500"></i>
-                    </button>
-                    <button onclick="checkAnswer(false, 'Incorreto. O eflúvio telógeno causa uma queda difusa por todo o couro cabeludo, não apenas em zonas específicas.')" class="w-full text-left p-4 rounded-xl border border-slate-200 hover:border-emerald-500 hover:bg-emerald-50 transition-all font-medium flex justify-between items-center group">
-                        <span>C) Eflúvio Telógeno</span>
-                        <i class="fas fa-chevron-right text-slate-300 group-hover:text-emerald-500"></i>
-                    </button>
-                </div>
-                <div id="feedback" class="mt-8 p-4 rounded-xl hidden"></div>
-            </div>
-        </section>
-
-        <!-- ABA: BIBLIOTECA -->
-        <section id="resources" class="tab-content">
-            <h2 class="text-3xl font-bold mb-8">Biblioteca de Referência</h2>
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <div class="bg-white p-1 rounded-2xl border border-slate-200 shadow-sm">
-                    <img src="https://img.youtube.com/vi/j65R3rYp9oE/maxresdefault.jpg" class="w-full h-48 object-cover rounded-xl" alt="Anatomia">
-                    <div class="p-4">
-                        <h4 class="font-bold mb-2">Anatomia do Fio</h4>
-                        <a href="https://www.youtube.com/watch?v=j65R3rYp9oE" target="_blank" class="text-emerald-600 text-sm font-bold flex items-center gap-1">
-                            Ver no YouTube <i class="fas fa-external-link-alt text-xs"></i>
-                        </a>
-                    </div>
-                </div>
-                <div class="bg-white p-1 rounded-2xl border border-slate-200 shadow-sm">
-                    <img src="https://img.youtube.com/vi/0X7W9G4HqP8/maxresdefault.jpg" class="w-full h-48 object-cover rounded-xl" alt="Tricoscopia">
-                    <div class="p-4">
-                        <h4 class="font-bold mb-2">Prática de Tricoscopia</h4>
-                        <a href="https://www.youtube.com/watch?v=0X7W9G4HqP8" target="_blank" class="text-emerald-600 text-sm font-bold flex items-center gap-1">
-                            Ver no YouTube <i class="fas fa-external-link-alt text-xs"></i>
-                        </a>
-                    </div>
-                </div>
-                <div class="bg-white p-1 rounded-2xl border border-slate-200 shadow-sm">
-                    <img src="https://img.youtube.com/vi/xS8K6P8Kk6Y/maxresdefault.jpg" class="w-full h-48 object-cover rounded-xl" alt="Alta Frequência">
-                    <div class="p-4">
-                        <h4 class="font-bold mb-2">Uso da Alta Frequência</h4>
-                        <a href="https://www.youtube.com/watch?v=xS8K6P8Kk6Y" target="_blank" class="text-emerald-600 text-sm font-bold flex items-center gap-1">
-                            Ver no YouTube <i class="fas fa-external-link-alt text-xs"></i>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-    </main>
-
-    <!-- Footer -->
-    <footer class="bg-white border-t border-slate-200 py-12">
-        <div class="max-w-7xl mx-auto px-4 flex flex-col md:flex-row justify-between items-center gap-6">
-            <div class="flex items-center gap-2">
-                <i class="fas fa-graduation-cap text-emerald-600"></i>
-                <span class="font-bold text-slate-900">Terapia Capilar Academy</span>
-            </div>
-            <p class="text-slate-400 text-sm">© 2024 Formação Profissional em Tricologia. Todos os direitos reservados.</p>
-            <div class="flex gap-4 text-slate-400">
-                <i class="fab fa-instagram hover:text-emerald-600 cursor-pointer transition-all"></i>
-                <i class="fab fa-youtube hover:text-emerald-600 cursor-pointer transition-all"></i>
-                <i class="fab fa-linkedin hover:text-emerald-600 cursor-pointer transition-all"></i>
+            <div class="pdf-section mb-5">
+                <h4>📄 Instruções para PDF (Tricologia)</h4>
+                <ul>
+                    <li><strong>Conceito:</strong> Estudo da estrutura, funções e patologias do fio e couro cabeludo.</li>
+                    <li><strong>Pontos Chave:</strong> Ciclo de crescimento (Anágena, Catágena, Telógena).</li>
+                    <li><strong>Dica:</strong> Identifique a haste capilar antes de iniciar qualquer tratamento.</li>
+                </ul>
             </div>
         </div>
-    </footer>
 
-    <script>
-        const lessons = {
-            bio: {
-                title: "Anatomia e Fisiologia do Fio",
-                video: "https://www.youtube.com/embed/j65R3rYp9oE"
-            },
-            micro: {
-                title: "Análise por Tricoscopia Digital",
-                video: "https://www.youtube.com/embed/0X7W9G4HqP8"
-            },
-            eletro: {
-                title: "Alta Frequência na Terapia Capilar",
-                video: "https://www.youtube.com/embed/xS8K6P8Kk6Y"
-            },
-            argila: {
-                title: "Argiloterapia e Desintoxicação",
-                video: "https://www.youtube.com/embed/S2qY4v1X8mQ"
-            }
-        };
+        <div class="tab-pane fade" id="eletroterapia">
+            <h2>Módulo 2: Eletroterapia Capilar</h2>
+            <div class="row">
+                <div class="col-md-6 mb-4">
+                    <div class="video-container"><iframe src="https://www.youtube.com/embed/VLR_CrnRicQ" frameborder="0" allowfullscreen></iframe></div>
+                    <div class="video-container"><iframe src="https://www.youtube.com/embed/EuoQyYa8uEE" frameborder="0" allowfullscreen></iframe></div>
+                </div>
+                <div class="col-md-6 mb-4">
+                    <div class="video-container"><iframe src="https://www.youtube.com/embed/SqLtuI0K_98" frameborder="0" allowfullscreen></iframe></div>
+                    <div class="video-container"><iframe src="https://www.youtube.com/embed/Z6A6pdrLKZY" frameborder="0" allowfullscreen></iframe></div>
+                </div>
+            </div>
+            <div class="pdf-section mb-5">
+                <h4>📄 Instruções para PDF (Eletroterapia)</h4>
+                <ul>
+                    <li><strong>Equipamentos:</strong> Alta Frequência, Laserterapia e LED.</li>
+                    <li><strong>Aplicação:</strong> Aumentar a permeabilidade de ativos e bactericida.</li>
+                    <li><strong>Segurança:</strong> Contraindicações em gestantes e portadores de marcapasso.</li>
+                </ul>
+            </div>
+        </div>
 
-        function showTab(tabId) {
-            // Esconder conteúdos das abas
-            document.querySelectorAll('.tab-content').forEach(tab => {
-                tab.classList.remove('active');
-            });
-            // Mostrar aba selecionada
-            document.getElementById(tabId).classList.add('active');
-            
-            // Se voltar para home, garantir que os módulos aparecem e o vídeo desaparece
-            if(tabId === 'home') {
-                closeLesson();
-            }
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        }
+        <div class="tab-pane fade" id="anamnese">
+            <h2>Módulo 3: Anamnese</h2>
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <div class="video-container"><iframe src="https://www.youtube.com/embed/9HNwZX8p7tM" frameborder="0" allowfullscreen></iframe></div>
+                    <div class="video-container"><iframe src="https://www.youtube.com/embed/S2hTQx8gFxw" frameborder="0" allowfullscreen></iframe></div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="video-container"><iframe src="https://www.youtube.com/embed/oCaXLuGRQxc" frameborder="0" allowfullscreen></iframe></div>
+                    <div class="video-container"><iframe src="https://www.youtube.com/embed/WGCisEZ6etA" frameborder="0" allowfullscreen></iframe></div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="video-container"><iframe src="https://www.youtube.com/embed/atoET3dyh6Y" frameborder="0" allowfullscreen></iframe></div>
+                    <div class="video-container"><iframe src="https://www.youtube.com/embed/yRqQ2V2HEW8" frameborder="0" allowfullscreen></iframe></div>
+                    <div class="video-container"><iframe src="https://www.youtube.com/embed/w_2syoXPglM" frameborder="0" allowfullscreen></iframe></div>
+                </div>
+            </div>
+            <div class="pdf-section mb-5">
+                <h4>📄 Instruções para PDF (Anamnese)</h4>
+                <ul>
+                    <li><strong>Protocolo:</strong> Escuta ativa do paciente e histórico clínico.</li>
+                    <li><strong>Exame Visual:</strong> Uso do dermatoscópio para análise do óstio folicular.</li>
+                    <li><strong>Checklist:</strong> Hábitos alimentares, estresse e uso de medicamentos.</li>
+                </ul>
+            </div>
+        </div>
 
-        function openLesson(lessonKey) {
-            const lesson = lessons[lessonKey];
-            document.getElementById('modules-grid').classList.add('hidden');
-            document.getElementById('lesson-viewer').classList.remove('hidden');
-            document.getElementById('main-video').src = lesson.video;
-            document.getElementById('lesson-title').innerText = lesson.title;
-            window.scrollTo({ top: 400, behavior: 'smooth' });
-        }
+        <div class="tab-pane fade" id="argiloterapia">
+            <h2>Módulo 4: Argiloterapia</h2>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="video-container"><iframe src="https://www.youtube.com/embed/c3kn6ZVx9Ok" frameborder="0" allowfullscreen></iframe></div>
+                    <div class="video-container"><iframe src="https://www.youtube.com/embed/GZm804PkavY" frameborder="0" allowfullscreen></iframe></div>
+                </div>
+                <div class="col-md-6">
+                    <div class="video-container"><iframe src="https://www.youtube.com/embed/ZCi6fy-5C2E" frameborder="0" allowfullscreen></iframe></div>
+                    <div class="video-container"><iframe src="https://www.youtube.com/embed/cbjwb3ggAa8" frameborder="0" allowfullscreen></iframe></div>
+                </div>
+            </div>
+            <div class="pdf-section mb-5">
+                <h4>📄 Instruções para PDF (Argiloterapia)</h4>
+                <ul>
+                    <li><strong>Tipos:</strong> Argila Verde (oleosidade), Branca (sensibilidade), Preta (desintoxicação).</li>
+                    <li><strong>Preparação:</strong> Mistura com hidrolatos ou água mineral (não metal).</li>
+                    <li><strong>Aplicação:</strong> Apenas no couro cabeludo, remover antes de secar totalmente.</li>
+                </ul>
+            </div>
+        </div>
 
-        function closeLesson() {
-            document.getElementById('modules-grid').classList.remove('hidden');
-            document.getElementById('lesson-viewer').classList.add('hidden');
-            document.getElementById('main-video').src = ""; // Parar o vídeo
-        }
+    </div>
+</div>
 
-        function checkAnswer(isCorrect, message) {
-            const feedback = document.getElementById('feedback');
-            feedback.classList.remove('hidden', 'bg-red-50', 'text-red-700', 'bg-emerald-50', 'text-emerald-700');
-            
-            if (isCorrect) {
-                feedback.classList.add('bg-emerald-50', 'text-emerald-700');
-                feedback.innerHTML = `<i class="fas fa-check-circle mr-2"></i> ${message}`;
-            } else {
-                feedback.classList.add('bg-red-50', 'text-red-700');
-                feedback.innerHTML = `<i class="fas fa-times-circle mr-2"></i> ${message}`;
-            }
-        }
-    </script>
+<footer class="text-center py-4 mt-5 bg-dark text-white">
+    <p>&copy; 2024 Plataforma Terapia Capilar - Todos os direitos reservados.</p>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
